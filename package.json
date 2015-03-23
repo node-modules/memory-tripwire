@@ -1,13 +1,14 @@
 {
   "name": "memory-tripwire",
   "version": "1.0.0",
-  "description": "kill process when memory over the limit",
+  "description": "suicide when memory over the limit",
   "main": "index.js",
   "scripts": {
     "test": "make test"
   },
   "keywords": [
-
+    "memory",
+    "suicide"
   ],
   "author": {
     "name": "dead-horse",

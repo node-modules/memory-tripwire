@@ -21,7 +21,7 @@ memory-tripwire
 [gittip-image]: https://img.shields.io/gittip/dead-horse.svg?style=flat-square
 [gittip-url]: https://www.gittip.com/dead-horse/
 
-kill process when memory over the limit
+suicide when memory over the limit
 
 ## Installation
 
@@ -31,6 +31,34 @@ $ npm install memory-tripwire
 
 ## Usage
 
-### License
+```js
+var tripwire = Tripwire({
+  warning: '20mb',
+  critical: '40mb',
+  interval: '1s',
+  cycle: 3,
+  exitTime: '5s',
+  disconnectTime: '3s'
+});
+
+tripwire.start();
+tripwire.on('bomb', function () {
+  console.log('oops');
+});
+```
+
+### Options
+
+- `warning` - warning memory limit, will be killed after observation
+- `critical` - critical memory limit, will be killed at once if memory is critical
+- `interval` - memory check interval
+- `cycle` - max warning continuously cycle, or will be killed
+- `disconnectTime` - will disconnect after `disconnctTime`
+- `exitTime` - will exit after `exitTime`
+- `exitCode` - will exit with `exitCode`
+
+### [Examples](examples)
+
+## License
 
 MIT
