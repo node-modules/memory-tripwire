@@ -17,6 +17,9 @@ var ms = require('humanize-ms');
 var copy = require('copy-to');
 var util = require('util');
 
+/**
+ * Module exports.
+ */
 module.exports = Tripwire;
 
 var defaultOpts = {
@@ -40,6 +43,7 @@ var defaultOpts = {
  *   - {String|Number} exitTime
  *   - {Number} exitCode
  */
+
 function Tripwire(opts) {
   if (!(this instanceof Tripwire)) return new Tripwire(opts);
   this.options = {};
@@ -112,9 +116,9 @@ Tripwire.prototype.disconnect = function () {
 };
 
 /**
- * exit the
- * @return {[type]} [description]
+ * suicide
  */
+
 Tripwire.prototype.exit = function () {
   this.emit('exit');
   process.exit(this.options.exitCode);
