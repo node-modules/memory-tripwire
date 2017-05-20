@@ -23,7 +23,7 @@
   "dependencies": {
     "copy-to": "~2.0.1",
     "humanize-bytes": "~1.0.0",
-    "humanize-ms": "~1.0.1"
+    "humanize-ms": "~1.2.1"
   },
   "devDependencies": {
     "autod": "2",
